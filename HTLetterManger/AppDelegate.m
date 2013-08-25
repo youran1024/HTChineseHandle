@@ -28,7 +28,7 @@
     NSArray *array = @[@"sfes", @"sfdfs", @"wang", @"join", @"张小华", @"张晓乐", @"张喜浩", @"杨万里", @"yang", @"孙晓"];
     //获取首字符
     NSDictionary *dic = [array sortedArrayUsingFirstLetter];
-    
+    //因为字典的无序，将所有的key取出来之后，重新输出
     NSArray *keys = [[dic allKeys] sortedArrayUsingSelector:@selector(compare:)];
     
     for (NSString *key in keys) {
@@ -43,13 +43,13 @@
     }
     
     NSString * str = @"sdf获取汉字首字母，如果参数既不是汉字也不是英文字母，则返回 @“#”";
-    
+    //获取首字符
     printf("获取首字符：%s \n", [[str firstLetter] UTF8String]);
+    //获取所有汉字的首字符
     printf("获取所有汉字的首字符：%s \n", [[str firstLetters] UTF8String]);
     
     printf("\n");
     printf("%s \n", [[str allLetters] UTF8String]);
-    
     
     return YES;
 }

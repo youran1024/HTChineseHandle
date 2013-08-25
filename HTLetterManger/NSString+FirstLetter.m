@@ -21,9 +21,14 @@
     return [HTFirstLetter firstLetters:self];
 }
 
+//为了减少内存就占用，如无必要，不要使用此函数
+#if ALL_LETTER_ISAVAILABLE
+
 - (NSString *)allLetters
 {
     return [POAPinyin Convert:self];
 }
+
+#endif
 
 @end
