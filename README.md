@@ -8,6 +8,7 @@ HTLetterManger
 2.取汉语拼音的全拼  例。中国， zhongguo
 
 //----------------------------------------------
+
 char pinyinFirstLetter(unsigned short hanzi);
 
 @interface HTFirstLetter : NSObject
