@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "POAPinyin.h"
 
 @interface NSString (FirstLetter)
 
 - (NSString *)firstLetter;
 
 - (NSString *)firstLetters;
+
+- (NSString *)allLetters;
 
 @end

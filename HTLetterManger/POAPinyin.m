@@ -521,7 +521,7 @@ const pinyinTableCell  pinyinTable[] = {
       // NSLog(@"%@",zi);
        
        if([zi length]<4){
-           pyString = [pyString stringByAppendingFormat:@"%@",[hzString substringWithRange:rang]];
+           pyString = [pyString stringByAppendingFormat:@" %@",[hzString substringWithRange:rang]];
        
        }
        
@@ -539,19 +539,19 @@ const pinyinTableCell  pinyinTable[] = {
               
                if (tRang.location != NSNotFound)
                {
-                   pyString = [pyString stringByAppendingFormat:@"%@",pinyinTable[j].pinyin];
+                   pyString = [pyString stringByAppendingFormat:@" %@",pinyinTable[j].pinyin];
                    isFind = true;
                    break;
                }
              
            }
            if (!isFind){
-                pyString = [pyString stringByAppendingFormat:@"%@",[hzString substringWithRange:rang]];
+                pyString = [pyString stringByAppendingFormat:@" %@",[hzString substringWithRange:rang]];
            }
            
        }
        else{
-           pyString = [pyString stringByAppendingFormat:@"%@",[hzString substringWithRange:rang]];
+           pyString = [pyString stringByAppendingFormat:@" %@",[hzString substringWithRange:rang]];
        }
 
        

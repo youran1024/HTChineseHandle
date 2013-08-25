@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "NSArray+FirstLetterArray.h"
+#import "NSString+FirstLetter.h"
 
 @implementation AppDelegate
 
@@ -22,6 +24,33 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    NSArray *array = @[@"sfes", @"sfdfs", @"wang", @"join", @"张小华", @"张晓乐", @"张喜浩", @"杨万里", @"yang", @"孙晓"];
+    //获取首字符
+    NSDictionary *dic = [array sortedArrayUsingFirstLetter];
+    
+    NSArray *keys = [[dic allKeys] sortedArrayUsingSelector:@selector(compare:)];
+    
+    for (NSString *key in keys) {
+        
+        NSArray *array = [dic objectForKey:key];
+        printf("%s:\n", [key UTF8String]);
+        
+        for (NSString *str1 in array) {
+            printf("  %s\n", [str1 UTF8String]);
+        }
+        
+    }
+    
+    NSString * str = @"sdf获取汉字首字母，如果参数既不是汉字也不是英文字母，则返回 @“#”";
+    
+    printf("获取首字符：%s \n", [[str firstLetter] UTF8String]);
+    printf("获取所有汉字的首字符：%s \n", [[str firstLetters] UTF8String]);
+    
+    printf("\n");
+    printf("%s \n", [[str allLetters] UTF8String]);
+    
+    
     return YES;
 }
 

@@ -239,17 +239,18 @@ char pinyinFirstLetter(unsigned short hanzi)
 
 @interface NSString (enumrateCharater)
 
-- (void)enumerateCharaterUsingBlock:(void(^)(char letter, BOOL *stop))enumertae;
+- (void)enumerateCharaterUsingBlock:(void(^)(unsigned short letter, BOOL *stop))enumertae;
 
 @end
 
 @implementation NSString (enumrateCharater)
 
-- (void)enumerateCharaterUsingBlock:(void(^)(char letter, BOOL *stop))enumertae
+- (void)enumerateCharaterUsingBlock:(void(^)(unsigned short letter, BOOL *stop))enumertae
 {
     static BOOL stop;
     for (NSInteger i = 0; i < [self length]; i++)
     {
+        NSLog(@"letter1:%c", [self characterAtIndex:i]);
         enumertae([self characterAtIndex:i], &stop);
 
         if (stop) break;
@@ -277,8 +278,8 @@ char pinyinFirstLetter(unsigned short hanzi)
 + (NSString *)firstLetterUsingSeperate:(NSString *)seperate chineseString:(NSString *)chineseString
 {
     
-    __block NSString *firstLetters = nil;
-    [chineseString enumerateCharaterUsingBlock:^(char letter, BOOL *stop) {
+    __block NSString *firstLetters = @"";
+    [chineseString enumerateCharaterUsingBlock:^(unsigned short letter, BOOL *stop) {
      
      int index = letter - HANZI_START;
      
@@ -294,17 +295,17 @@ char pinyinFirstLetter(unsigned short hanzi)
                (letter > 'A' && letter < 'Z')){
 
         if ([firstLetters length]){
-            firstLetters = [firstLetters stringByAppendingFormat:@" %c", firstLetterArray[index]];
+            firstLetters = [firstLetters stringByAppendingFormat:@" %c", letter];
         }else {
-            firstLetters = [firstLetters stringByAppendingFormat:@"%c", firstLetterArray[index]];
+            firstLetters = [firstLetters stringByAppendingFormat:@"%c", letter];
         }
 
      }else {
          //如果是字母或其它符号，都返回 #
         if ([firstLetters length]){
-            firstLetters = [firstLetters stringByAppendingFormat:@" %c", firstLetterArray[index]];
+            firstLetters = [firstLetters stringByAppendingFormat:@" %c",true ? '#' : letter];
         }else {
-            firstLetters = [firstLetters stringByAppendingFormat:@"%c", firstLetterArray[index]];
+            firstLetters = [firstLetters stringByAppendingFormat:@"%c", true ? '#' : letter];
         }
      }
 

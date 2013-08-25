@@ -21,4 +21,9 @@
     return [HTFirstLetter firstLetters:self];
 }
 
+- (NSString *)allLetters
+{
+    return [POAPinyin Convert:self];
+}
+
 @end
