@@ -8,9 +8,9 @@
 
 #define ALL_LETTER_ISAVAILABLE  1
 
-
 #import <Foundation/Foundation.h>
 
+//为了减少内存就占用，如无必要，不要使用此函数
 #if ALL_LETTER_ISAVAILABLE
 
 #import "POAPinyin.h"
