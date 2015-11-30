@@ -224,18 +224,18 @@ static char firstLetterArray[HANZI_COUNT] =
 "whxgzxwznnqzjzjjqjccchykxbzszcnjtllcqxynjnckycynccqnxyewyczdcjycchyjlbtzyycqwlpgpyllgktltlgkgqbgychj"
 "xy";
 
-char pinyinFirstLetter(unsigned short hanzi)
+char pinyinFirstLetter(unsigned short hanZi)
 {
-	int index = hanzi - HANZI_START;
-	if (index >= 0 && index <= HANZI_COUNT)
-	{
+	int index = hanZi - HANZI_START;
+    
+	if (index >= 0 && index <= HANZI_COUNT){
 		return firstLetterArray[index];
-	}
-	else
-	{
+        
+	}else{
 		return '#';
 	}
 }
+
 
 @interface NSString (enumrateCharater)
 
@@ -248,66 +248,165 @@ char pinyinFirstLetter(unsigned short hanzi)
 - (void)enumerateCharaterUsingBlock:(void(^)(unsigned short letter, BOOL *stop))enumertae
 {
     static BOOL stop;
-    for (NSInteger i = 0; i < [self length]; i++)
-    {
-        NSLog(@"letter1:%c", [self characterAtIndex:i]);
+    for (NSInteger i = 0; i < [self length]; i++){
+        
         enumertae([self characterAtIndex:i], &stop);
-
+        
         if (stop) break;
     }
 }
 
 @end
 
+#pragma mark - 
+#pragma mark FirstLetter
+
+@implementation NSString (FirstLetter)
+
+- (NSString *)firstLetter
+{
+    return [HTFirstLetter firstLetter:self];
+}
+
+- (NSString *)firstLetters
+{
+    return [HTFirstLetter firstLetters:self];
+}
+
+@end
+
+@implementation NSArray (FirstLetterArray)
+
+- (NSDictionary *)sortedArrayUsingFirstLetterByKeypath:(NSString *)keyPath
+{
+    NSMutableDictionary *mutDic = [NSMutableDictionary dictionary];
+    const char *letterPoint = NULL;
+    NSString *firstLetter = nil;
+    for (id obj in self) {
+
+        NSString *string;
+        if ([obj isKindOfClass:[NSDictionary class]]) {
+            
+            NSDictionary *dict = (NSDictionary *)obj;
+            string = [dict valueForKeyPath:keyPath];
+            
+        }else if ([obj isKindOfClass:[NSString class]]) {
+            
+            string = (NSString *)obj;
+            
+        }else {
+            
+            string = [obj valueForKeyPath:keyPath];
+            if (string.length == 0) {
+                NSAssert(string.length > 0, @"I can't find keyPath:%@", keyPath);
+                return nil;
+            }
+        }
+        
+        letterPoint = [string UTF8String];
+        
+        //如果开头不是大小写字母则读取 首字符
+        if (!(*letterPoint > 'a' && *letterPoint < 'z') &&
+            !(*letterPoint > 'A' && *letterPoint < 'Z')) {
+            
+            //汉字或其它字符
+            char letter = pinyinFirstLetter([string characterAtIndex:0]);
+            letterPoint = &letter;
+            
+        }
+        //首字母转成大写
+        firstLetter = [[NSString stringWithFormat:@"%c", *letterPoint] uppercaseString];
+        
+        //首字母所对应的 姓名列表
+        NSMutableArray *mutArray = [mutDic objectForKey:firstLetter];
+        
+        if (mutArray == nil) {
+            mutArray = [NSMutableArray array];
+            [mutDic setObject:mutArray forKey:firstLetter];
+        }
+        
+        [mutArray addObject:obj];
+    }
+    
+    if (keyPath.length != 0) {
+        //  如果数组里边都是字符串,将数组排序
+        for (NSString *key in [mutDic allKeys]) {
+            NSArray *nameArray = [mutDic objectForKey:key];
+            nameArray = [nameArray sortedArrayWithOptions:NSSortStable usingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+                
+                NSString *string1 = [obj1 valueForKeyPath:keyPath];
+                NSString *string2 = [obj2 valueForKeyPath:keyPath];
+                return [string1 compare:string2];
+                
+            }];
+            
+            [mutDic setValue:nameArray forKey:key];
+        }
+    }else {
+        for (NSString *key in [mutDic allKeys]) {
+            NSArray *nameArray = [[mutDic objectForKey:key] sortedArrayUsingSelector:@selector(compare:)];
+            [mutDic setValue:nameArray forKey:key];
+        }
+
+    }
+    
+    return mutDic;
+}
+
+- (NSDictionary *)sortedArrayUsingFirstLetter
+{
+    return [self sortedArrayUsingFirstLetterByKeypath:nil];
+}
+
+@end
+
+
 @implementation HTFirstLetter
 
 + (NSString *)firstLetter:(NSString *)chineseString
 {
-    NSString *firstLetters = [HTFirstLetter firstLetters:chineseString];
-    NSArray *firstLetterArray = [firstLetters componentsSeparatedByString:@" "];
-    if ([firstLetterArray count] > 0)
-        firstLetters = [firstLetterArray objectAtIndex:0];
-    return firstLetters;
+    return [HTFirstLetter firstLetterUsingSeperate:@"" chineseString:chineseString isFirst:YES];
 }
 
 + (NSString *)firstLetters:(NSString *)chineseString
 {
-    return [HTFirstLetter firstLetterUsingSeperate:@" " chineseString:chineseString];
+    return [HTFirstLetter firstLetterUsingSeperate:@" " chineseString:chineseString isFirst:NO];
 }
 
-+ (NSString *)firstLetterUsingSeperate:(NSString *)seperate chineseString:(NSString *)chineseString
++ (NSString *)firstLetterUsingSeperate:(NSString *)seperate chineseString:(NSString *)chineseString isFirst:(BOOL)isFirst
 {
-    
     __block NSString *firstLetters = @"";
     [chineseString enumerateCharaterUsingBlock:^(unsigned short letter, BOOL *stop) {
      
-     int index = letter - HANZI_START;
-     
-     if (index >= 0 && index <= HANZI_COUNT){
-     
-        if ([firstLetters length]){
-            firstLetters = [firstLetters stringByAppendingFormat:@" %c", firstLetterArray[index]];
+        *stop = isFirst;
+        
+        int index = letter - HANZI_START;
+        
+        if (index >= 0 && index <= HANZI_COUNT){
+            
+            if ([firstLetters length]){
+                firstLetters = [firstLetters stringByAppendingFormat:@" %c", firstLetterArray[index]];
+            }else {
+                firstLetters = [firstLetters stringByAppendingFormat:@"%c", firstLetterArray[index]];
+            }
+            
+        }else if ((letter > 'a' && letter < 'z') ||
+                  (letter > 'A' && letter < 'Z')){
+            
+            if ([firstLetters length]){
+                firstLetters = [firstLetters stringByAppendingFormat:@" %c", letter];
+            }else {
+                firstLetters = [firstLetters stringByAppendingFormat:@"%c", letter];
+            }
+            
         }else {
-            firstLetters = [firstLetters stringByAppendingFormat:@"%c", firstLetterArray[index]];
+            //如果是字母或其它符号，都返回 #
+            if ([firstLetters length]){
+                firstLetters = [firstLetters stringByAppendingFormat:@" %c",false ? '#' : letter];
+            }else {
+                firstLetters = [firstLetters stringByAppendingFormat:@"%c", false ? '#' : letter];
+            }
         }
-     
-     }else if ((letter > 'a' && letter < 'z') ||
-               (letter > 'A' && letter < 'Z')){
-
-        if ([firstLetters length]){
-            firstLetters = [firstLetters stringByAppendingFormat:@" %c", letter];
-        }else {
-            firstLetters = [firstLetters stringByAppendingFormat:@"%c", letter];
-        }
-
-     }else {
-         //如果是字母或其它符号，都返回 #
-        if ([firstLetters length]){
-            firstLetters = [firstLetters stringByAppendingFormat:@" %c",true ? '#' : letter];
-        }else {
-            firstLetters = [firstLetters stringByAppendingFormat:@"%c", true ? '#' : letter];
-        }
-     }
 
      }];
     
