@@ -2,7 +2,10 @@
 ![License MIT](https://go-shields.herokuapp.com/license-MIT-blue.png)
 
 
+
 #### 说明
+
+汉字拼音的处理方法，在一些需要提取汉字拼音首字母，或者通过汉字拼音首字母进行分类并排序的项目里，是非常有用的，希望大家喜欢~
 
 
 - **` @interface NSString (FirstLetter)`**
@@ -28,7 +31,11 @@
 
 ```
 
-> Hug the girl, write the code
+###感谢
+
+**<font color=red>感谢提供pinyin文件的却未曾相识的George同志~ </font>**
+
+>  write the code， enjoy the world
 
 
 >> Power by [Mr.Yang][1]

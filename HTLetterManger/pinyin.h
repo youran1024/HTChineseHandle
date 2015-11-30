@@ -7,9 +7,10 @@
  *
  */
 
-char pinyinFirstLetter(unsigned short hanzi);
 
-
+//--------------------------------------------
+//      MARK:NSString 扩展
+//-------------------------------------------
 @interface NSString (FirstLetter)
 
 //  获取第一个汉字拼音首字母
@@ -21,21 +22,23 @@ char pinyinFirstLetter(unsigned short hanzi);
 @end
 
 
+//--------------------------------------------
+//      MARK:NSArray 扩展
+//-------------------------------------------
 @interface NSArray (FirstLetterArray)
 
-/**
- *	通过需要按【首字母分类】的 【姓名数组】 调用此函数
- *
- *	@return	A：以a打头的姓名或者单词
-    B：以b打头的姓名或者单词
- */
-
+//	如果给定的数组对象里边都是字符串则调用此方法
 - (NSDictionary *)sortedArrayUsingFirstLetter;
+
+//	如果给定的数组里边是Model，或者字典则用这个，并且给出KeyPath
 - (NSDictionary *)sortedArrayUsingFirstLetterByKeypath:(NSString *)keyPath;
 
 @end
 
 
+//--------------------------------------------
+//      MARK:HTFirstLetter
+//-------------------------------------------
 @interface HTFirstLetter : NSObject
 
 //获取汉字首字母，如果参数既不是汉字也不是英文字母，则返回 @“#”
