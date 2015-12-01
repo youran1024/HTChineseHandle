@@ -53,7 +53,7 @@
     
     // -------------------- Method 2
     
-    NSArray *array = @[@"sfes", @"sfdfs", @"wang", @"join", @"张小华", @"张晓乐", @"张喜浩", @"杨万里", @"yang", @"孙晓"];
+    NSArray *array = @[@"sfes", @"sdfs", @"wang", @"join", @"张飞华", @"张晓乐", @"张斑浩", @"杨万里", @"杨丽华", @"孙晓"];
     
     //获取首字符
     NSDictionary *dic = [array sortedArrayUsingFirstLetter];
@@ -72,7 +72,7 @@
         
     }
 
-    // -------------------- Method 3
+    // -------------------- Method 3 Dictionary
     
     NSMutableArray *dictArray = [NSMutableArray array];
     for (NSString *name in array) {
@@ -88,7 +88,7 @@
     
     NSLog(@"dictArray:%@", dictDict);
     
-    // -------------------- Method 4
+    // -------------------- Method 4  Model
     
     NSMutableArray *modelArray = [NSMutableArray array];
     for (int i = 0; i < array.count; i++) {

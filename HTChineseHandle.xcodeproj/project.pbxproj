@@ -10,31 +10,32 @@
 		5A5FAEF217C9D93B000F4A7D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5FAEF117C9D93B000F4A7D /* UIKit.framework */; };
 		5A5FAEF417C9D93B000F4A7D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5FAEF317C9D93B000F4A7D /* Foundation.framework */; };
 		5A5FAEF617C9D93B000F4A7D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A5FAEF517C9D93B000F4A7D /* CoreGraphics.framework */; };
-		5A5FAEFC17C9D93C000F4A7D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5A5FAEFA17C9D93C000F4A7D /* InfoPlist.strings */; };
-		5A5FAEFE17C9D93C000F4A7D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5FAEFD17C9D93C000F4A7D /* main.m */; };
-		5A5FAF0217C9D93C000F4A7D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5FAF0117C9D93C000F4A7D /* AppDelegate.m */; };
-		5A5FAF0417C9D93C000F4A7D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A5FAF0317C9D93C000F4A7D /* Default.png */; };
-		5A5FAF0617C9D93C000F4A7D /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A5FAF0517C9D93C000F4A7D /* Default@2x.png */; };
-		5A5FAF0817C9D93C000F4A7D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A5FAF0717C9D93C000F4A7D /* Default-568h@2x.png */; };
-		5A5FAF1617C9D9AD000F4A7D /* pinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A5FAF1417C9D9AD000F4A7D /* pinyin.m */; };
+		928BB99A1C0D86610056E99A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 928BB98F1C0D86610056E99A /* AppDelegate.m */; };
+		928BB99B1C0D86610056E99A /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 928BB9901C0D86610056E99A /* Default-568h@2x.png */; };
+		928BB99C1C0D86610056E99A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 928BB9911C0D86610056E99A /* Default.png */; };
+		928BB99D1C0D86610056E99A /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 928BB9921C0D86610056E99A /* Default@2x.png */; };
+		928BB99E1C0D86610056E99A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 928BB9931C0D86610056E99A /* InfoPlist.strings */; };
+		928BB99F1C0D86610056E99A /* HTChineseHandle-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 928BB9951C0D86610056E99A /* HTChineseHandle-Info.plist */; };
+		928BB9A01C0D86610056E99A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 928BB9971C0D86610056E99A /* main.m */; };
+		928BB9A11C0D86610056E99A /* pinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = 928BB9991C0D86610056E99A /* pinyin.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5A5FAEEE17C9D93B000F4A7D /* HTLetterManger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTLetterManger.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A5FAEEE17C9D93B000F4A7D /* HTChineseHandle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTChineseHandle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A5FAEF117C9D93B000F4A7D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5A5FAEF317C9D93B000F4A7D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5A5FAEF517C9D93B000F4A7D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		5A5FAEF917C9D93C000F4A7D /* HTLetterManger-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HTLetterManger-Info.plist"; sourceTree = "<group>"; };
-		5A5FAEFB17C9D93C000F4A7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		5A5FAEFD17C9D93C000F4A7D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		5A5FAEFF17C9D93C000F4A7D /* HTLetterManger-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HTLetterManger-Prefix.pch"; sourceTree = "<group>"; };
-		5A5FAF0017C9D93C000F4A7D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		5A5FAF0117C9D93C000F4A7D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		5A5FAF0317C9D93C000F4A7D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		5A5FAF0517C9D93C000F4A7D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		5A5FAF0717C9D93C000F4A7D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		5A5FAF1417C9D9AD000F4A7D /* pinyin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pinyin.m; sourceTree = "<group>"; };
-		5A5FAF1517C9D9AD000F4A7D /* pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pinyin.h; sourceTree = "<group>"; };
+		928BB98E1C0D86610056E99A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		928BB98F1C0D86610056E99A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		928BB9901C0D86610056E99A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		928BB9911C0D86610056E99A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		928BB9921C0D86610056E99A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		928BB9941C0D86610056E99A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		928BB9951C0D86610056E99A /* HTChineseHandle-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HTChineseHandle-Info.plist"; sourceTree = "<group>"; };
+		928BB9961C0D86610056E99A /* HTChineseHandle-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "HTChineseHandle-Prefix.pch"; sourceTree = "<group>"; };
+		928BB9971C0D86610056E99A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		928BB9981C0D86610056E99A /* pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pinyin.h; sourceTree = "<group>"; };
+		928BB9991C0D86610056E99A /* pinyin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pinyin.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +55,7 @@
 		5A5FAEE517C9D93B000F4A7D = {
 			isa = PBXGroup;
 			children = (
-				5A5FAEF717C9D93C000F4A7D /* HTLetterManger */,
+				928BB98D1C0D86610056E99A /* HTChineseHandle */,
 				5A5FAEF017C9D93B000F4A7D /* Frameworks */,
 				5A5FAEEF17C9D93B000F4A7D /* Products */,
 			);
@@ -63,7 +64,7 @@
 		5A5FAEEF17C9D93B000F4A7D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5A5FAEEE17C9D93B000F4A7D /* HTLetterManger.app */,
+				5A5FAEEE17C9D93B000F4A7D /* HTChineseHandle.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,38 +79,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5A5FAEF717C9D93C000F4A7D /* HTLetterManger */ = {
+		928BB98D1C0D86610056E99A /* HTChineseHandle */ = {
 			isa = PBXGroup;
 			children = (
-				5A5FAF0017C9D93C000F4A7D /* AppDelegate.h */,
-				5A5FAF0117C9D93C000F4A7D /* AppDelegate.m */,
-				5A5FAF1517C9D9AD000F4A7D /* pinyin.h */,
-				5A5FAF1417C9D9AD000F4A7D /* pinyin.m */,
-				5A5FAEF817C9D93C000F4A7D /* Supporting Files */,
+				928BB98E1C0D86610056E99A /* AppDelegate.h */,
+				928BB98F1C0D86610056E99A /* AppDelegate.m */,
+				928BB9901C0D86610056E99A /* Default-568h@2x.png */,
+				928BB9911C0D86610056E99A /* Default.png */,
+				928BB9921C0D86610056E99A /* Default@2x.png */,
+				928BB9931C0D86610056E99A /* InfoPlist.strings */,
+				928BB9951C0D86610056E99A /* HTChineseHandle-Info.plist */,
+				928BB9961C0D86610056E99A /* HTChineseHandle-Prefix.pch */,
+				928BB9971C0D86610056E99A /* main.m */,
+				928BB9981C0D86610056E99A /* pinyin.h */,
+				928BB9991C0D86610056E99A /* pinyin.m */,
 			);
-			path = HTLetterManger;
-			sourceTree = "<group>";
-		};
-		5A5FAEF817C9D93C000F4A7D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				5A5FAEF917C9D93C000F4A7D /* HTLetterManger-Info.plist */,
-				5A5FAEFA17C9D93C000F4A7D /* InfoPlist.strings */,
-				5A5FAEFD17C9D93C000F4A7D /* main.m */,
-				5A5FAEFF17C9D93C000F4A7D /* HTLetterManger-Prefix.pch */,
-				5A5FAF0317C9D93C000F4A7D /* Default.png */,
-				5A5FAF0517C9D93C000F4A7D /* Default@2x.png */,
-				5A5FAF0717C9D93C000F4A7D /* Default-568h@2x.png */,
-			);
-			name = "Supporting Files";
+			path = HTChineseHandle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5A5FAEED17C9D93B000F4A7D /* HTLetterManger */ = {
+		5A5FAEED17C9D93B000F4A7D /* HTChineseHandle */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5A5FAF0B17C9D93C000F4A7D /* Build configuration list for PBXNativeTarget "HTLetterManger" */;
+			buildConfigurationList = 5A5FAF0B17C9D93C000F4A7D /* Build configuration list for PBXNativeTarget "HTChineseHandle" */;
 			buildPhases = (
 				5A5FAEEA17C9D93B000F4A7D /* Sources */,
 				5A5FAEEB17C9D93B000F4A7D /* Frameworks */,
@@ -119,9 +112,9 @@
 			);
 			dependencies = (
 			);
-			name = HTLetterManger;
+			name = HTChineseHandle;
 			productName = HTLetterManger;
-			productReference = 5A5FAEEE17C9D93B000F4A7D /* HTLetterManger.app */;
+			productReference = 5A5FAEEE17C9D93B000F4A7D /* HTChineseHandle.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -133,7 +126,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = Hunter;
 			};
-			buildConfigurationList = 5A5FAEE917C9D93B000F4A7D /* Build configuration list for PBXProject "HTLetterManger" */;
+			buildConfigurationList = 5A5FAEE917C9D93B000F4A7D /* Build configuration list for PBXProject "HTChineseHandle" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -145,7 +138,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5A5FAEED17C9D93B000F4A7D /* HTLetterManger */,
+				5A5FAEED17C9D93B000F4A7D /* HTChineseHandle */,
 			);
 		};
 /* End PBXProject section */
@@ -155,10 +148,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A5FAEFC17C9D93C000F4A7D /* InfoPlist.strings in Resources */,
-				5A5FAF0417C9D93C000F4A7D /* Default.png in Resources */,
-				5A5FAF0617C9D93C000F4A7D /* Default@2x.png in Resources */,
-				5A5FAF0817C9D93C000F4A7D /* Default-568h@2x.png in Resources */,
+				928BB99E1C0D86610056E99A /* InfoPlist.strings in Resources */,
+				928BB99C1C0D86610056E99A /* Default.png in Resources */,
+				928BB99B1C0D86610056E99A /* Default-568h@2x.png in Resources */,
+				928BB99F1C0D86610056E99A /* HTChineseHandle-Info.plist in Resources */,
+				928BB99D1C0D86610056E99A /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,19 +163,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A5FAEFE17C9D93C000F4A7D /* main.m in Sources */,
-				5A5FAF0217C9D93C000F4A7D /* AppDelegate.m in Sources */,
-				5A5FAF1617C9D9AD000F4A7D /* pinyin.m in Sources */,
+				928BB9A01C0D86610056E99A /* main.m in Sources */,
+				928BB99A1C0D86610056E99A /* AppDelegate.m in Sources */,
+				928BB9A11C0D86610056E99A /* pinyin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		5A5FAEFA17C9D93C000F4A7D /* InfoPlist.strings */ = {
+		928BB9931C0D86610056E99A /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5A5FAEFB17C9D93C000F4A7D /* en */,
+				928BB9941C0D86610056E99A /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -249,9 +243,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HTLetterManger/HTLetterManger-Prefix.pch";
-				INFOPLIST_FILE = "HTLetterManger/HTLetterManger-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "HTChineseHandle/HTChineseHandle-Prefix.pch";
+				INFOPLIST_FILE = "HTChineseHandle/HTChineseHandle-Info.plist";
+				PRODUCT_NAME = HTChineseHandle;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -260,9 +254,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "HTLetterManger/HTLetterManger-Prefix.pch";
-				INFOPLIST_FILE = "HTLetterManger/HTLetterManger-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "HTChineseHandle/HTChineseHandle-Prefix.pch";
+				INFOPLIST_FILE = "HTChineseHandle/HTChineseHandle-Info.plist";
+				PRODUCT_NAME = HTChineseHandle;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -270,7 +264,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5A5FAEE917C9D93B000F4A7D /* Build configuration list for PBXProject "HTLetterManger" */ = {
+		5A5FAEE917C9D93B000F4A7D /* Build configuration list for PBXProject "HTChineseHandle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5A5FAF0917C9D93C000F4A7D /* Debug */,
@@ -279,7 +273,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5A5FAF0B17C9D93C000F4A7D /* Build configuration list for PBXNativeTarget "HTLetterManger" */ = {
+		5A5FAF0B17C9D93C000F4A7D /* Build configuration list for PBXNativeTarget "HTChineseHandle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5A5FAF0C17C9D93C000F4A7D /* Debug */,
