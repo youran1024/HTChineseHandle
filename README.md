@@ -1,7 +1,7 @@
 #HTFirstLetter 
 ![License MIT](https://go-shields.herokuapp.com/license-MIT-blue.png)
-
-
+![Badge w/ Version](https://img.shields.io/cocoapods/v/HTChineseHandle.svg)
+![Badge w/ Platform](https://img.shields.io/cocoapods/p/HTChineseHandle.svg?style=flat)
 
 #### 说明
 
