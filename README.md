@@ -1,4 +1,4 @@
-#HTChineseHandle
+# HTChineseHandle
 ![License MIT](https://go-shields.herokuapp.com/license-MIT-blue.png)
 ![Badge w/ Version](https://img.shields.io/cocoapods/v/HTChineseHandle.svg)
 ![Badge w/ Platform](https://img.shields.io/cocoapods/p/HTChineseHandle.svg?style=flat)
@@ -40,7 +40,7 @@ pod 'HTChineseLetter`
 
 ```
 
-###Thanks
+### Thanks
 
 **<font color=red>感谢提供pinyin文件的却未曾相识的George同志~ </font>**
 
